@@ -3,32 +3,35 @@
 
 using namespace std;
 
-using Graph = vector<vector<int>>;
-
-vector<int> bfs(Graph G)
+class Graph
 {
-    queue<int> queue;
-    queue.push(0);
+public:
+    vector<int> visited;
 
-    vector<int> visited(G.size(), -1);
-    visited.at(0) = 0;
-
-    while (!queue.empty())
+    Graph(vector<vector<int>> g)
     {
-        int current = queue.front();
-        queue.pop();
+        visited.assign(g.size(), -1);
 
-        for (int next : G.at(current))
+        queue<int> queue;
+        queue.push(0);
+
+        visited.at(0) = 0;
+
+        while (!queue.empty())
         {
-            if (visited.at(next) != -1)
-            {
-                continue;
-            }
+            int current = queue.front();
+            queue.pop();
 
-            queue.push(next);
-            visited.at(next) = visited.at(current) + 1;
+            for (int next : g.at(current))
+            {
+                if (visited.at(next) != -1)
+                {
+                    continue;
+                }
+
+                queue.push(next);
+                visited.at(next) = visited.at(current) + 1;
+            }
         }
     }
-
-    return visited;
-}
+};
