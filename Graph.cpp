@@ -5,24 +5,25 @@ using namespace std;
 
 class Graph
 {
+
 public:
     vector<int> visited;
 
-    Graph(vector<vector<int>> g)
+    Graph(vector<vector<int>> graph, int start = 0)
     {
-        visited.assign(g.size(), -1);
+        visited.assign(graph.size(), -1);
 
         queue<int> queue;
-        queue.push(0);
+        queue.push(start);
 
-        visited.at(0) = 0;
+        visited.at(start) = 0;
 
         while (!queue.empty())
         {
             int current = queue.front();
             queue.pop();
 
-            for (int next : g.at(current))
+            for (int next : graph.at(current))
             {
                 if (visited.at(next) != -1)
                 {
