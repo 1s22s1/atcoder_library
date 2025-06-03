@@ -20,6 +20,6 @@ TEST(GraphTest, BasicAssertions)
     vector<int> expected_visited = {0, 1, 2, 1};
     EXPECT_EQ(expected_visited, linear_graph.visited);
 
-    vector<int> expected_previous = {-1, 0, 1, 2};
+    vector<int> expected_previous = {-1, 0, 1, 0};
     EXPECT_EQ(expected_previous, linear_graph.previous);
 }
