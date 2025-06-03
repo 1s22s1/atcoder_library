@@ -8,10 +8,12 @@ class LinearGraph
 
 public:
     vector<int> visited;
+    vector<int> previous;
 
     LinearGraph(vector<vector<int>> graph, int start = 0)
     {
         visited.assign(graph.size(), -1);
+        previous.assign(graph.size(), -1);
 
         queue<int> queue;
         queue.push(start);
@@ -32,6 +34,7 @@ public:
 
                 queue.push(next);
                 visited.at(next) = visited.at(current) + 1;
+                previous.at(next) = current;
             }
         }
     }
