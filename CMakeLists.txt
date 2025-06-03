@@ -13,13 +13,13 @@ FetchContent_MakeAvailable(googletest)
 enable_testing()
 
 add_executable(
-  LinearGraphTest
-  LinearGraphTest.cpp
+  GraphTest
+  GraphTest.cpp
 )
 target_link_libraries(
-  LinearGraphTest
+  GraphTest
   GTest::gtest_main
 )
 
 include(GoogleTest)
-gtest_discover_tests(LinearGraphTest)
+gtest_discover_tests(GraphTest)
