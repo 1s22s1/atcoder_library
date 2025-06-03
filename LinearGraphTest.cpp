@@ -1,6 +1,6 @@
 #include <gtest/gtest.h>
 
-#include "Graph.cpp"
+#include "LinearGraph.cpp"
 
 using namespace std;
 
@@ -16,8 +16,8 @@ TEST(GraphTest, BasicAssertions)
         g.at(e.at(1)).push_back(e.at(0));
     }
 
-    Graph graph(g);
-    vector<int> actual = graph.visited;
+    LinearGraph linear_graph(g);
+    vector<int> actual = linear_graph.visited;
 
     EXPECT_TRUE(0 == actual.at(0));
     EXPECT_TRUE(1 == actual.at(1));

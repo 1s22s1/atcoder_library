@@ -3,13 +3,13 @@
 
 using namespace std;
 
-class Graph
+class LinearGraph
 {
 
 public:
     vector<int> visited;
 
-    Graph(vector<vector<int>> graph, int start = 0)
+    LinearGraph(vector<vector<int>> graph, int start = 0)
     {
         visited.assign(graph.size(), -1);
 
