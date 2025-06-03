@@ -17,10 +17,9 @@ TEST(GraphTest, BasicAssertions)
     }
 
     LinearGraph linear_graph(g);
+
+    vector<int> expected = {0, 1, 2, 1};
     vector<int> actual = linear_graph.visited;
 
-    EXPECT_TRUE(0 == actual.at(0));
-    EXPECT_TRUE(1 == actual.at(1));
-    EXPECT_TRUE(2 == actual.at(2));
-    EXPECT_TRUE(1 == actual.at(3));
+    EXPECT_EQ(expected, actual);
 }
