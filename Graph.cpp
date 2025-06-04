@@ -46,14 +46,16 @@ class MazeGraph
 public:
     vector<vector<int>> visited;
 
-    MazeGraph(vector<string> maze, pair<int, int> start)
+    MazeGraph(vector<string> maze, vector<pair<int, int>> starts)
     {
         visited.assign(maze.size(), vector<int>(maze.at(0).size(), -1));
 
         queue<pair<int, int>> queue;
-        queue.push(start);
-
-        visited.at(start.first).at(start.second) = 0;
+        for (auto start : starts)
+        {
+            queue.push(start);
+            visited.at(start.first).at(start.second) = 0;
+        }
 
         vector<pair<int, int>> moves = {{-1, 0}, {1, 0}, {0, 1}, {0, -1}};
         while (!queue.empty())
