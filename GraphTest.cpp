@@ -27,7 +27,7 @@ TEST(LinearGraphTest, BasicAssertions)
 TEST(MazeGraphTest, BasicAssertions)
 {
     vector<string> maze = {"...#.", ".#.#.", ".#..."};
-    vector<pair<int, int>> starts = {{0, 0}};
+    vector<Point> starts = {{0, 0}};
 
     MazeGraph maze_graph(maze, starts);
 

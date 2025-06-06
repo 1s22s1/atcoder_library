@@ -41,20 +41,29 @@ public:
     }
 };
 
+class Point
+{
+public:
+    int x;
+    int y;
+
+    Point(int x, int y) : x(x), y(y) {}
+};
+
 class MazeGraph
 {
 public:
     vector<vector<int>> visited;
 
-    MazeGraph(vector<string> maze, vector<pair<int, int>> starts, char wall = '#')
+    MazeGraph(vector<string> maze, vector<Point> starts, char wall = '#')
     {
         visited.assign(maze.size(), vector<int>(maze.at(0).size(), -1));
 
-        queue<pair<int, int>> queue;
+        queue<Point> queue;
         for (auto start : starts)
         {
             queue.push(start);
-            visited.at(start.first).at(start.second) = 0;
+            visited.at(start.x).at(start.y) = 0;
         }
 
         vector<pair<int, int>> moves = {{-1, 0}, {1, 0}, {0, 1}, {0, -1}};
@@ -65,8 +74,8 @@ public:
 
             for (auto move : moves)
             {
-                int next_x = current.first + move.first;
-                int next_y = current.second + move.second;
+                int next_x = current.x + move.first;
+                int next_y = current.y + move.second;
 
                 if (next_x < 0 || next_x >= maze.size() || next_y < 0 || next_y >= maze.at(0).size())
                 {
@@ -83,8 +92,8 @@ public:
                     continue;
                 }
 
-                queue.push({next_x, next_y});
-                visited.at(next_x).at(next_y) = visited.at(current.first).at(current.second) + 1;
+                queue.push(Point{next_x, next_y});
+                visited.at(next_x).at(next_y) = visited.at(current.x).at(current.y) + 1;
             }
         }
     }
