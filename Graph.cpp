@@ -46,7 +46,7 @@ class MazeGraph
 public:
     vector<vector<int>> visited;
 
-    MazeGraph(vector<string> maze, vector<pair<int, int>> starts)
+    MazeGraph(vector<string> maze, vector<pair<int, int>> starts, char wall = '#')
     {
         visited.assign(maze.size(), vector<int>(maze.at(0).size(), -1));
 
@@ -73,7 +73,7 @@ public:
                     continue;
                 }
 
-                if (maze.at(next_x).at(next_y) == '#')
+                if (maze.at(next_x).at(next_y) == wall)
                 {
                     continue;
                 }
