@@ -1,6 +1,7 @@
 #include <gtest/gtest.h>
 
-#include "Graph.cpp"
+#include "LinearGraph.cpp"
+#include "MazeGraph.cpp"
 
 using namespace std;
 

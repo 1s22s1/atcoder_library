@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.14)
-project(app)
+project(app CXX)
 
 include(FetchContent)
 FetchContent_Declare(
