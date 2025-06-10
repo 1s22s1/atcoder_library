@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.14)
-project(app CXX)
+project(lib CXX)
 
 include(FetchContent)
 FetchContent_Declare(
@@ -13,13 +13,14 @@ FetchContent_MakeAvailable(googletest)
 enable_testing()
 
 add_executable(
-  GraphTest
-  GraphTest.cpp
+  LibTest
+  LinearGraphTest.cpp
+  MazeGraphTest.cpp
 )
 target_link_libraries(
-  GraphTest
+  LibTest
   GTest::gtest_main
 )
 
 include(GoogleTest)
-gtest_discover_tests(GraphTest)
+gtest_discover_tests(LibTest)
