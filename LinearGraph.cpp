@@ -11,7 +11,12 @@ public:
     vector<int> visited;
     vector<int> previous;
 
-    LinearGraph(vector<vector<int>> graph, int start = 0)
+    LinearGraph(vector<vector<int>> _graph)
+    {
+        graph = _graph;
+    }
+
+    vector<int> bfs(int start = 0)
     {
         visited.assign(graph.size(), -1);
         previous.assign(graph.size(), -1);
@@ -38,5 +43,10 @@ public:
                 previous.at(next) = current;
             }
         }
+
+        return visited;
     }
+
+private:
+    vector<vector<int>> graph;
 };
