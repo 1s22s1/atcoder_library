@@ -16,15 +16,18 @@ public:
         graph = _graph;
     }
 
-    vector<int> bfs(int start = 0)
+    void bfs(vector<int> starts = {0})
     {
         visited.assign(graph.size(), -1);
         previous.assign(graph.size(), -1);
 
         queue<int> queue;
-        queue.push(start);
 
-        visited.at(start) = 0;
+        for (auto start : starts)
+        {
+            queue.push(start);
+            visited.at(start) = 0;
+        }
 
         while (!queue.empty())
         {
@@ -43,8 +46,6 @@ public:
                 previous.at(next) = current;
             }
         }
-
-        return visited;
     }
 
 private:

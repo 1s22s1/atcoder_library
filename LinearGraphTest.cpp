@@ -16,7 +16,7 @@ TEST(LinearGraphTest, BasicAssertions)
     }
 
     LinearGraph linear_graph(g);
-    linear_graph.bfs();
+    linear_graph.bfs({0});
 
     vector<int> expected_visited = {0, 1, 2, 1};
     EXPECT_EQ(expected_visited, linear_graph.visited);
