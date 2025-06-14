@@ -18,7 +18,12 @@ class MazeGraph
 public:
     vector<vector<int>> visited;
 
-    MazeGraph(vector<string> maze, vector<Point> starts, char wall = '#')
+    MazeGraph(vector<string> _maze, char wall = '#')
+    {
+        maze = _maze;
+    }
+
+    void bfs(vector<Point> starts = {Point{0, 0}}, char wall = '#')
     {
         visited.assign(maze.size(), vector<int>(maze.at(0).size(), -1));
 
@@ -60,4 +65,7 @@ public:
             }
         }
     }
+
+private:
+    vector<string> maze;
 };
