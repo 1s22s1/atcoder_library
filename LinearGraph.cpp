@@ -4,6 +4,8 @@
 
 using namespace std;
 
+template <typename T>
+
 class LinearGraph
 {
 
@@ -11,7 +13,7 @@ public:
     vector<int> visited;
     vector<int> previous;
 
-    LinearGraph(vector<vector<int>> _graph)
+    LinearGraph(T _graph)
     {
         graph = _graph;
     }
@@ -49,5 +51,5 @@ public:
     }
 
 private:
-    vector<vector<int>> graph;
+    T graph;
 };
