@@ -17,6 +17,7 @@ vector<pair<char, int>> rle(string s)
         }
 
         vec.push_back({s.at(i), j - i});
+        i = j;
     }
 
     return vec;
