@@ -16,6 +16,7 @@ add_executable(
   LibTest
   LinearGraphTest.cpp
   MazeGraphTest.cpp
+  RLE.cpp
 )
 target_link_libraries(
   LibTest
