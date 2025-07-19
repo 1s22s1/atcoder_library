@@ -3,9 +3,9 @@
 
 using namespace std;
 
-vector<pair<char, int>> rle(string s)
+vector<pair<char, long long>> rle(string s)
 {
-    vector<pair<char, int>> vec;
+    vector<pair<char, long long>> vec;
 
     int i = 0;
     while (i < s.size())
