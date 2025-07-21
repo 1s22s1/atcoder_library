@@ -60,7 +60,7 @@ public:
                     continue;
                 }
 
-                queue.push(Point{next_x, next_y});
+                queue.emplace(Point{next_x, next_y});
                 visited.at(next_x).at(next_y) = visited.at(current.x).at(current.y) + 1;
             }
         }

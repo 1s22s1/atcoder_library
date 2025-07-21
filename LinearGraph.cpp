@@ -43,7 +43,7 @@ public:
                     continue;
                 }
 
-                queue.push(next);
+                queue.emplace(next);
                 visited.at(next) = visited.at(current) + 1;
                 previous.at(next) = current;
             }
