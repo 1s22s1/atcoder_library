@@ -18,7 +18,7 @@ public:
         graph = _graph;
     }
 
-    void bfs(vector<int> starts = {0})
+    void bfs(vector<long long> starts = {0})
     {
         visited.assign(graph.size(), -1);
         previous.assign(graph.size(), -1);
