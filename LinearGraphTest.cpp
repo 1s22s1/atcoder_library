@@ -6,8 +6,8 @@ using namespace std;
 
 TEST(LinearGraphTest, BasicAssertions)
 {
-    vector<vector<int>> g(4);
-    vector<vector<int>> vec = {{0, 1}, {1, 2}, {2, 3}, {3, 0}};
+    vector<vector<long long>> g(4);
+    vector<vector<long long>> vec = {{0, 1}, {1, 2}, {2, 3}, {3, 0}};
 
     for (const auto e : vec)
     {
@@ -18,9 +18,9 @@ TEST(LinearGraphTest, BasicAssertions)
     LinearGraph linear_graph(g);
     linear_graph.bfs({0});
 
-    vector<int> expected_visited = {0, 1, 2, 1};
+    vector<long long> expected_visited = {0, 1, 2, 1};
     EXPECT_EQ(expected_visited, linear_graph.visited);
 
-    vector<int> expected_previous = {-1, 0, 1, 0};
+    vector<long long> expected_previous = {-1, 0, 1, 0};
     EXPECT_EQ(expected_previous, linear_graph.previous);
 }

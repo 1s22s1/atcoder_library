@@ -10,8 +10,8 @@ class LinearGraph
 {
 
 public:
-    vector<int> visited;
-    vector<int> previous;
+    vector<long long> visited;
+    vector<long long> previous;
 
     LinearGraph(T _graph)
     {
@@ -23,7 +23,7 @@ public:
         visited.assign(graph.size(), -1);
         previous.assign(graph.size(), -1);
 
-        queue<int> queue;
+        queue<long long> queue;
 
         for (auto start : starts)
         {
@@ -33,10 +33,10 @@ public:
 
         while (!queue.empty())
         {
-            int current = queue.front();
+            long long current = queue.front();
             queue.pop();
 
-            for (int next : graph.at(current))
+            for (long long next : graph.at(current))
             {
                 if (visited.at(next) != -1)
                 {
