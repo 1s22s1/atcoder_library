@@ -4,26 +4,28 @@
 
 using namespace std;
 
+#define ll long long
+
 template <typename T>
 
 class LinearGraph
 {
 
 public:
-    vector<long long> visited;
-    vector<long long> previous;
+    vector<ll> visited;
+    vector<ll> previous;
 
     LinearGraph(T _graph)
     {
         graph = _graph;
     }
 
-    void bfs(vector<long long> starts = {0})
+    void bfs(vector<ll> starts = {0})
     {
         visited.assign(graph.size(), -1);
         previous.assign(graph.size(), -1);
 
-        queue<long long> queue;
+        queue<ll> queue;
 
         for (auto start : starts)
         {
@@ -33,10 +35,10 @@ public:
 
         while (!queue.empty())
         {
-            long long current = queue.front();
+            auto current = queue.front();
             queue.pop();
 
-            for (long long next : graph.at(current))
+            for (auto next : graph.at(current))
             {
                 if (visited.at(next) != -1)
                 {
