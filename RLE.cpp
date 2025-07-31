@@ -7,10 +7,10 @@ vector<pair<char, long long>> rle(string s)
 {
     vector<pair<char, long long>> vec;
 
-    int i = 0;
+    long long i = 0;
     while (i < s.size())
     {
-        int j = i;
+        long long j = i;
         while (j < s.size() && s.at(i) == s.at(j))
         {
             j++;
