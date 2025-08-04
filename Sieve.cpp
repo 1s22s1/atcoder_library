@@ -7,28 +7,28 @@ class Sieve
 public:
     vector<bool> prime_vector;
 
-    Sieve(int n)
+    Sieve(long long n)
     {
         prime_vector.assign(n + 1, true);
 
         prime_vector.at(0) = false;
         prime_vector.at(1) = false;
 
-        for (int p = 2; p <= n; p++)
+        for (long long p = 2; p <= n; p++)
         {
             if (!prime_vector.at(p))
             {
                 continue;
             }
 
-            for (int q = p * 2; q <= n; q += p)
+            for (long long q = p * 2; q <= n; q += p)
             {
                 prime_vector.at(q) = false;
             }
         }
     }
 
-    bool is_prime(int n)
+    bool is_prime(long long n)
     {
         return prime_vector.at(n);
     }
