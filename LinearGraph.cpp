@@ -29,7 +29,7 @@ public:
 
         for (auto start : starts)
         {
-            queue.push(start);
+            queue.emplace(start);
             visited.at(start) = 0;
         }
 
