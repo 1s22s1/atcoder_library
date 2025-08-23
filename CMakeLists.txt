@@ -18,6 +18,7 @@ add_executable(
   test/MazeGraphTest.cpp
   test/MiscTest.cpp
   test/RLETest.cpp
+  test/SieveTest.cpp
 )
 target_link_libraries(
   LibTest
