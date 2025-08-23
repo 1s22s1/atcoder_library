@@ -1,6 +1,6 @@
 #include <gtest/gtest.h>
 
-#include "LinearGraph.cpp"
+#include "../LinearGraph.cpp"
 
 using namespace std;
 

@@ -1,6 +1,6 @@
 #include <gtest/gtest.h>
 
-#include "Sieve.cpp"
+#include "../Sieve.cpp"
 
 using namespace std;
 

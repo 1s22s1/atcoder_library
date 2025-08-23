@@ -14,10 +14,10 @@ enable_testing()
 
 add_executable(
   LibTest
-  LinearGraphTest.cpp
-  MazeGraphTest.cpp
-  RLETest.cpp
-  MiscTest.cpp
+  test/LinearGraphTest.cpp
+  test/MazeGraphTest.cpp
+  test/MiscTest.cpp
+  test/RLETest.cpp
 )
 target_link_libraries(
   LibTest

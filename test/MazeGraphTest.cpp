@@ -1,6 +1,6 @@
 #include <gtest/gtest.h>
 
-#include "MazeGraph.cpp"
+#include "../MazeGraph.cpp"
 
 using namespace std;
 
