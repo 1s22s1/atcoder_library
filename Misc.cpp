@@ -21,20 +21,21 @@ ll mod(ll a, ll n, ll p)
     return (tmp * tmp) % p;
 }
 
-vector<pair<char, long long>> rle(string s)
+vector<pair<char, ll>> rle(string s)
 {
-    vector<pair<char, long long>> vec;
+    vector<pair<char, ll>> vec;
 
-    long long i = 0;
-    while (i < s.size())
+    ll n = s.size();
+    ll i = 0;
+    while (i < n)
     {
-        long long j = i;
-        while (j < s.size() && s.at(i) == s.at(j))
+        ll j = i;
+        while (j < n && s.at(i) == s.at(j))
         {
             j++;
         }
 
-        vec.push_back({s.at(i), j - i});
+        vec.emplace_back(s.at(i), j - i);
         i = j;
     }
 
