@@ -1,6 +1,6 @@
 #include <gtest/gtest.h>
 
-#include "../Misc.cpp"
+#include "../src/Misc.cpp"
 
 using namespace std;
 
