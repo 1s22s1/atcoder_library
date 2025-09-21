@@ -4,19 +4,21 @@
 
 using namespace std;
 
+#define ll long long
+
 class Point
 {
 public:
-    int x;
-    int y;
+    ll x;
+    ll y;
 
-    Point(int x, int y) : x(x), y(y) {}
+    Point(ll x, ll y) : x(x), y(y) {}
 };
 
 class MazeGraph
 {
 public:
-    vector<vector<int>> visited;
+    vector<vector<ll>> visited;
 
     MazeGraph(vector<string> _maze, char wall = '#')
     {
@@ -25,7 +27,7 @@ public:
 
     void bfs(vector<Point> starts = {Point{0, 0}}, char wall = '#')
     {
-        visited.assign(maze.size(), vector<int>(maze.at(0).size(), -1));
+        visited.assign(maze.size(), vector<ll>(maze.at(0).size(), -1));
 
         queue<Point> queue;
         for (auto start : starts)
@@ -34,7 +36,7 @@ public:
             visited.at(start.x).at(start.y) = 0;
         }
 
-        vector<pair<int, int>> moves = {{-1, 0}, {1, 0}, {0, 1}, {0, -1}};
+        vector<pair<ll, ll>> moves = {{-1, 0}, {1, 0}, {0, 1}, {0, -1}};
         while (!queue.empty())
         {
             auto current = queue.front();

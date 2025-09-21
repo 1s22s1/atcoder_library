@@ -12,6 +12,6 @@ TEST(MazeGraphTest, BasicAssertions)
     MazeGraph maze_graph(maze);
     maze_graph.bfs();
 
-    vector<vector<int>> expected_visited = {{0, 1, 2, -1, 8}, {1, -1, 3, -1, 7}, {2, -1, 4, 5, 6}};
+    vector<vector<ll>> expected_visited = {{0, 1, 2, -1, 8}, {1, -1, 3, -1, 7}, {2, -1, 4, 5, 6}};
     EXPECT_EQ(expected_visited, maze_graph.visited);
 }
